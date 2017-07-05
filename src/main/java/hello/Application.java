@@ -10,6 +10,3 @@ public class Application {
         SpringApplication.run(Application.class, args);
     }
 }
-
-###############
-./gradlew clean build
