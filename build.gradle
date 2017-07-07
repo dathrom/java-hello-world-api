@@ -11,9 +11,11 @@ buildscript {
 }
 
 apply plugin: 'java'
+apply plugin: "jacoco"
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
+
 
 jar {
     baseName = 'gs-rest-service'
@@ -31,6 +33,13 @@ tasks.withType(Test) {
         showCauses true
         showExceptions true
         showStackTraces true
+    }
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
     }
 }
 
