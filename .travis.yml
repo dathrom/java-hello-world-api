@@ -1,5 +1,13 @@
-sudo: false
 language: java
+jdk:
+  - oraclejdk8
+
+before_script:
+  - chmod +x gradlew
 
 script:
   - ./gradlew clean build
+  - ./gradlew ./gradlew jacocoTestReport
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
