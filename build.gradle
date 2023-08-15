@@ -16,13 +16,14 @@ apply plugin: 'java'
 apply plugin: "jacoco"
 apply plugin: 'eclipse'
 apply plugin: 'idea'
+apply plugin: 'war'
 apply plugin: 'org.springframework.boot'
 
 
-jar {
-    baseName = 'gs-rest-service'
-    version =  '0.1.0'
+war {
+    archiveName 'gradle-war.war'
 }
+
 
 tasks.withType(Test) {
     testLogging {
@@ -46,7 +47,9 @@ jacocoTestReport {
 }
 
 repositories {
-    mavenCentral()
+    maven {
+        url "https://repo1.maven.org/maven2/"
+    }
 }
 
 sourceCompatibility = 1.8
