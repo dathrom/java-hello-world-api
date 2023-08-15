@@ -3,7 +3,6 @@ import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 buildscript {
     repositories {
-        mavenCentral()
         maven {
             url "https://repo1.maven.org/maven2/"
         }
